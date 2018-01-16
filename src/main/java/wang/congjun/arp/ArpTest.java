@@ -33,7 +33,7 @@ public class ArpTest
      * @param time ARP重发间隔时间,不断发送防止被路由器地址替换
      * @throws Exception
      */
-    static void sendArp(String deip,String deMac,String srcIp,String srcMac,int network,int time) throws Exception {
+    public static void sendArp(String deip,String deMac,String srcIp,String srcMac,int network,int time) throws Exception {
         InetAddress desip = InetAddress.getByName(deip);
         byte[] desmac = MacUtil.stomac(deMac);
         InetAddress srcip = InetAddress.getByName(srcIp);
