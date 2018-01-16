@@ -5,6 +5,7 @@ import jpcap.JpcapSender;
 import jpcap.NetworkInterface;
 import jpcap.packet.ARPPacket;
 import jpcap.packet.EthernetPacket;
+import wang.congjun.utils.MacUtil;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -34,9 +35,9 @@ public class ArpTest
      */
     static void sendArp(String deip,String deMac,String srcIp,String srcMac,int network,int time) throws Exception {
         InetAddress desip = InetAddress.getByName(deip);
-        byte[] desmac = stomac(deMac);
+        byte[] desmac = MacUtil.stomac(deMac);
         InetAddress srcip = InetAddress.getByName(srcIp);
-        byte[] srcmac = stomac(srcMac);
+        byte[] srcmac = MacUtil.stomac(srcMac);
         // 枚举网卡并打开设备
         NetworkInterface[] devices = JpcapCaptor.getDeviceList();
         NetworkInterface device = devices[network];
@@ -65,15 +66,6 @@ public class ArpTest
             Thread.sleep(time * 1000);
         }
     }
-    static byte[] stomac(String s)
-    {
-        byte[] mac = new byte[] { (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00 };
-        String[] s1 = s.split("-");
-        for (int x = 0; x < s1.length; x++)
-        {
-            mac[x] = (byte) ((Integer.parseInt(s1[x], 16)) & 0xff);
-        }
-        return mac;
-    }
+
 }
 

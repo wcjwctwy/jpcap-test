@@ -5,7 +5,7 @@ import jpcap.NetworkInterface;
 import jpcap.NetworkInterfaceAddress;
 
 /**
- * 网卡工具类View
+ * 网卡工具类
  * Created by duke on 2016/11/16.
  * arp-client
  */

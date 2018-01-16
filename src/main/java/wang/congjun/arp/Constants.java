@@ -14,7 +14,7 @@ public class Constants
      *                              参数配置                                                        *
      * ***********************************************************************************
      */
-    public static String DE_IP = "192.168.1.159";
+    public static String DE_IP = "10.20.7.22";
     public static String DE_MAC = "ac-bc-32-93-97-6d";
     public static String SRC_IP = "192.168.1.1";//
     public static String SRC_MAC = "20-F4-1B-80-08-2E";
